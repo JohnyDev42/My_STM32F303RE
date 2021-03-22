@@ -1,0 +1,16 @@
+Blink user LED2(Port-PA5) - STM32F303RE
+------------------------------------------
+
+GPIOB is connected to AHB2
+
+RCC base address for AHB1 -->0x40021000
+
+Address of the clock control register(AHB1ENR)  Bit 17 IOPBEN: I/O port B clock enable
+0x40021000 + 0x14 = 0x40021014
+
+Address of GPIOB Mode register: (write 01 in 11,10 Bits for pin13)
+0x4800 0400 + 0x00 = 0x48000400 
+
+Address of the GPIO output data register:(used to write):
+
+0x4800 0400 + 0x14 = 0x48000410 
